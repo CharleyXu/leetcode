@@ -42,6 +42,14 @@ public class ReferenceTest {
 		tricky(pnt1, pnt2);
 		System.out.println("X: " + pnt1.x + " , Y:" + pnt1.y);
 		System.out.println("X: " + pnt2.x + " , Y: " + pnt2.y);
+
+
+		People p1 = new People();
+		p1.setName("old");
+		People p2 = p1 ;
+		p1 = new People();
+		p1.setName("new");
+		System.out.println("p1 :"+p1.getName() + "\t\n" +"p2 : "+ p2.getName());
 	}
 
 	class Point {
@@ -106,4 +114,14 @@ public class ReferenceTest {
 			this.name = name;
 		}
 	}
+	/**
+	 * Java中赋值都是值赋值。
+	 *	将一个对象类型的引用s1赋值给另一个对象类型的引用s2，
+	 *	就是将这个对象类型的引用s1的值（对象地址）赋值给s2。
+	 *
+	 * 简而言之，将一个变量赋值给另一个变量，这两个变量没有任何直接关系。
+	 * 进一步讲是将一个变量的副本赋值给了另一个变量。（这里所讲的副本是为了区分c语言中的地址）
+	 *
+	 *
+	 */
 }

@@ -34,6 +34,9 @@ public class No5 {
 		if (end <= 0) {
 			return null;
 		}
+		if (end==1){
+			return s;
+		}
 		for (int i = 0; i < end - 1; i++) {
 			substring = isPalindrome2(s, i, i);    //abcba
 			if (substring.length() > result.length()) {
@@ -68,8 +71,11 @@ public class No5 {
 	}
 
 	public static void main(String[] args) {
-		String test = "tese011234";
+		String test = "babad";	//tese011234
 		System.out.println(test + " " + longestPalindrome(test));
 		System.out.println(test + " " + longestPalindrome2(test));
 	}
+
+
+
 }
