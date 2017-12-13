@@ -54,7 +54,6 @@ public class No7 {
 	@Test
 	public void test(){
 		int num = 2147481112;
-		int reverse = reverse(num);
 		System.out.println(num+"\n"+ reverse(num)+"\n"+ reverse2(num));
 	}
 }

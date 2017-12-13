@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Test2 {
-	public static Map<Long,Integer> map = new ConcurrentHashMap<Long, Integer>();
+	public final static Map<Long,Integer> map = new ConcurrentHashMap<Long, Integer>();
 
 	public static void run(){
 		map.put(1L,11);

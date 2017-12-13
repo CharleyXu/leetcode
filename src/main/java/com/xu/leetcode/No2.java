@@ -24,13 +24,17 @@ public class No2 {
 			ListNode preNode = new ListNode(sum%10);
 			temp.next = preNode;
 			temp = preNode;
-			l1 = l1==null?l1:l1.next;
-			l2 = l2==null?l2:l2.next;
+			if(null!=l1){
+				l1 = l1.next;
+			}
+			if(null!=l2){
+				l2 = l2.next;
+			}
 		}
 		return head.next;
 	}
 
-	class ListNode {
+	static class ListNode {
       int val;
       ListNode next;
       ListNode(int x) { val = x; }

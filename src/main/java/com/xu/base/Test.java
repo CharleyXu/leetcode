@@ -11,18 +11,7 @@ public class Test {
 		Test2.run();
 		Map<Long, Integer> policyThread = Test2.map;
 		System.out.println("123 " + policyThread);
-		for (Long key : policyThread.keySet()) {
-			Integer value = policyThread.get(key);
-			if (value == 11) {
-				try {
-					policyThread.remove(key);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-//				}
-			}
 
-		}
 		System.out.println("123 " + policyThread);
 		System.out.println("123 " + Test2.map);
 
@@ -30,16 +19,16 @@ public class Test {
 		System.out.println("policyThread address : " + addressOf(unsafe, policyThread));
 		System.out.println("Test2.map address :" + addressOf(unsafe, Test2.map));
 
-		System.out.println("transObject address:" + addressOf(unsafe, transObject(Test2.map)));
+//		System.out.println("transObject address:" + addressOf(unsafe, transObject(Test2.map)));
 
 		System.out.println("arr address:" + addressOf(unsafe, new int[]{1, 2, 3}));
 	}
 
-	public static Object transObject(Object obj){
-		Object returnObj = new Object();
-		returnObj = obj;
-		return returnObj;
-	}
+//	public static Object transObject(Object obj){
+//		Object returnObj = new Object();
+//		returnObj = obj;
+//		return returnObj;
+//	}
 
 	public static Unsafe getUnsafe() {
 		try {

@@ -55,12 +55,12 @@ public class No234 {
 		return pre;
 	}
 
-	class ListNode {
+	static class ListNode {
 		int val;
 		ListNode next;
 
-		ListNode(int x) {
-			val = x;
+		public ListNode(int val) {
+			this.val = val;
 		}
 
 		@Override
