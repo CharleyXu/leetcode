@@ -1,4 +1,4 @@
-package com.xu.leetcode;
+package com.xu.leetcode.Easy;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +10,7 @@ import org.junit.Test;
 public class No13 {
 
   public int romanToInt(String s) {
-    Map<Character, Integer> map = new HashMap<>();
+    Map<Character, Integer> map = new HashMap<Character, Integer>();
     map.put('I', 1);
     map.put('V', 5);
     map.put('X', 10);

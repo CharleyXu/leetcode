@@ -1,4 +1,4 @@
-package com.xu.leetcode;
+package com.xu.leetcode.Medium;
 
 import com.google.common.base.Stopwatch;
 

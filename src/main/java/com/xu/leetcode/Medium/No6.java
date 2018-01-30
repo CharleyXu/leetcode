@@ -1,4 +1,4 @@
-package com.xu.leetcode;
+package com.xu.leetcode.Medium;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
 

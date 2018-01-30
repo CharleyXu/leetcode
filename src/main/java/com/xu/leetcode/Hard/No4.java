@@ -1,4 +1,4 @@
-package com.xu.leetcode;
+package com.xu.leetcode.Hard;
 
 import org.junit.Test;
 

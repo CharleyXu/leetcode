@@ -1,4 +1,4 @@
-package com.xu.leetcode;
+package com.xu.leetcode.Easy;
 
 import org.junit.Test;
 
@@ -22,9 +22,9 @@ public class No9 {
 			int left = x / div;
 			int right = x % 10;
 
-			if (left != right)
+			if (left != right) {
 				return false;
-
+			}
 			x = (x % div) / 10;
 			div /= 100;
 		}
@@ -33,7 +33,7 @@ public class No9 {
 
 	@Test
 	public void test() {
-		int i = 1233215;
+		int i = 123321;
 		System.out.println(isPalindrome(i));
 	}
 
