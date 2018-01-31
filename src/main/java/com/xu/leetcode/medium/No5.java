@@ -1,4 +1,4 @@
-package com.xu.leetcode.Medium;
+package com.xu.leetcode.medium;
 
 /**
  * 求最长回文子串(Longest Palindromic Substring) 以中心为轴，这个字符串是左右对称 "a1abcba4a"，"abba"

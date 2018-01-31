@@ -1,4 +1,4 @@
-package com.xu.leetcode.Medium;
+package com.xu.leetcode.medium;
 
 /**
  * Container With Most Water

@@ -1,8 +1,6 @@
-package com.xu.leetcode.Hard;
+package com.xu.leetcode.hard;
 
 import org.junit.Test;
-
-import java.util.Collections;
 
 /**
  *  There are two sorted arrays nums1 and nums2 of size m and n respectively.

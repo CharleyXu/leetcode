@@ -1,9 +1,8 @@
-package com.xu.leetcode.Medium;
-
-import org.junit.Test;
+package com.xu.leetcode.medium;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.junit.Test;
 
 /**
  * Given a string, find the length of the longest substring without repeating characters.

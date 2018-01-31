@@ -1,10 +1,8 @@
-package com.xu.leetcode.Medium;
+package com.xu.leetcode.medium;
 
 import com.google.common.base.Stopwatch;
-
-import org.junit.Test;
-
 import java.util.concurrent.TimeUnit;
+import org.junit.Test;
 
 /**
  *	处理大数相加
