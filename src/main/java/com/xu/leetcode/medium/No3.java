@@ -5,6 +5,10 @@ import java.util.Map;
 import org.junit.Test;
 
 /**
+ * Longest Substring Without Repeating Characters
+ *
+ * 给定一个字符串，找到最长的子字符串的长度，不重复字符
+ *
  * Given a string, find the length of the longest substring without repeating characters.
  *
  * "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring,
