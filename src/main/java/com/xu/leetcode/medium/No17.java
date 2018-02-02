@@ -65,15 +65,17 @@ public class No17 {
 			return linkedList;
 		}
 		linkedList.add("");
+		int empty = 0;
 		String[] letters = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 		for (int i = 0, size = digits.length(); i < size; i++) {
 			int num = digits.charAt(i) - '0';
 			String letter = letters[num];
 			int length = letter.length();
 			if (length == 0) {
+				empty++;
 				continue;
 			}
-			while (linkedList.peek().length() == i) {
+			while (linkedList.peek().length() + empty == i) {
 				String s = linkedList.removeFirst();
 				for (int j = 0; j < length; j++) {
 					linkedList.add(s + letter.charAt(j));
@@ -87,7 +89,7 @@ public class No17 {
 	public void test() {
 		List<String> list = letterCombinations("161");
 		System.out.println(list);
-//		List<String> list1 = letterCombinations2("161");
-//		System.out.println(list1);
+		List<String> list1 = letterCombinations2("161");
+		System.out.println(list1);
 	}
 }

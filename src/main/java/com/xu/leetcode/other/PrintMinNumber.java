@@ -29,13 +29,10 @@ public class PrintMinNumber {
 		for (int i = 0; i < size; i++) {
 			list.add(num[i]);
 		}
-		Collections.sort(list, new Comparator<Integer>() {
-			@Override
-			public int compare(Integer o1, Integer o2) {
-				String s1 = o1 + "" + o2;
-				String s2 = o2 + "" + o1;
-				return s1.compareTo(s2);
-			}
+		list.sort((o1,o2) ->{
+			String s1 = o1 + "" + o2;
+			String s2 = o2 + "" + o1;
+			return s1.compareTo(s2);
 		});
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0, length = list.size(); i < length; i++) {
