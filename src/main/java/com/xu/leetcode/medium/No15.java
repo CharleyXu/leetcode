@@ -25,6 +25,9 @@ public class No15 {
 		Arrays.sort(nums);
 
 		for (int i = 0, size = nums.length; i < size - 2; i++) {
+			if (nums[i] > 0) {
+				break;
+			}
 			//remove dupicate
 			if (i == 0 || nums[i] != nums[i - 1]) {
 				int low = i + 1;
@@ -56,6 +59,7 @@ public class No15 {
 		}
 		return lists;
 	}
+
 
 	@Test
 	public void test() {
