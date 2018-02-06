@@ -21,45 +21,41 @@ public class No15 {
 		if (nums == null || nums.length < 3) {
 			return lists;
 		}
-
 		Arrays.sort(nums);
-
-		for (int i = 0, size = nums.length; i < size - 2; i++) {
-			if (nums[i] > 0) {
-				break;
-			}
-			//remove dupicate
-			if (i == 0 || nums[i] != nums[i - 1]) {
-				int low = i + 1;
-				int high = size - 1;
-				while (low < high) {
-					int sum = nums[i] + nums[low] + nums[high];
-					if (sum == 0) {
-						List<Integer> list = new ArrayList<>();
-						list.add(nums[i]);
-						list.add(nums[low]);
-						list.add(nums[high]);
-						lists.add(list);
-						low++;
-						high--;
-						//remove dupicate
-						while (low < high && nums[low] == nums[low - 1]) {
-							low++;
-						}
-						while (low < high && nums[high] == nums[high + 1]) {
-							high--;
-						}
-					} else if (sum > 0) {
-						high--;
-					} else {
+		int length = nums.length;
+		int i, low, high, temp;
+		for (i = 0; i < length - 2 && nums[i] <= 0; i++) {
+			temp = -nums[i];
+			low = i + 1;
+			high = length - 1;
+			while (low < high) {
+				if (temp == nums[low] + nums[high]) {
+					List<Integer> list = new ArrayList<>();
+					list.add(nums[i]);
+					list.add(nums[low]);
+					list.add(nums[high]);
+					lists.add(list);
+					low++;
+					//remove dupicate
+					while (low < high && nums[low] == nums[low - 1]) {
 						low++;
 					}
+					high--;
+				} else if (temp > nums[low] + nums[high]) {
+					low++;
+					while (low < high && nums[low] == nums[low - 1]) {
+						low++;
+					}
+				} else {
+					high--;
 				}
+			}
+			while (nums[i] == nums[i + 1] && i + 1 < length - 2) {
+				i++;
 			}
 		}
 		return lists;
 	}
-
 
 	@Test
 	public void test() {

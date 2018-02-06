@@ -36,7 +36,7 @@ public class No3 {
 
 	@Test
 	public void test() {
-		String s = "pwwkew";	//abcdfafdvf
+		String s = "abcddddadsc";  //abcdfafdvf
 		int result = lengthOfLongestSubstring(s);
 		System.out.println("int: " + result );
 	}

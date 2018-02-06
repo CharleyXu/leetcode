@@ -21,34 +21,33 @@ public class No18 {
 		}
 		Arrays.sort(num);
 		int length = num.length;
-		for (int i = 0; i < length - 3; i++) {
-			if (num[i] > 0) {
-				break;
-			}
-			int low = i;
-			int high = length - 1;
-			for (int j = i + 1; j < length - 2; j++) {
+		int i, j, low, high, temp;
+		for (i = 0; i < length - 3; i++) {
+			for (j = i + 1; j < length - 2; j++) {
+				low = j + 1;
+				high = length - 1;
+				temp = target - num[i] - num[j];
 				while (low < high) {
-					int sum = num[i] + num[j] + num[low] + num[high];
-					if (sum == 0) {
+					if (temp < num[low] + num[high]) {
+						high--;
+						continue;
+					}
+					if (temp == num[low] + num[high]) {
 						List<Integer> integers = new ArrayList<>(
 								Arrays.asList(num[i], num[j], num[low], num[high]));
 						list.add(integers);
-//						high--;
-//						low++;
-						//remove dupicate
-//						while (low < high && num[low] == num[low - 1]) {
-//							low++;
-//						}
-//						while (low < high && num[high] == num[high + 1]) {
-//							high--;
-//						}
-					} else if (sum > 0) {
-						high--;
-					} else {
+					}
+					low++;
+					while (low < high && num[low] == num[low - 1]) {
 						low++;
 					}
 				}
+				while (num[j] == num[j + 1] && j < length - 2) {
+					j++;
+				}
+			}
+			while (num[i] == num[i + 1] && i < length - 3) {
+				i++;
 			}
 		}
 		return list;
@@ -57,9 +56,10 @@ public class No18 {
 	@Test
 	public void test() {
 		int[] arr = {1, 0, -1, 0, -2, 2};
-		int[] arr2 = {-3, -3, 1, 0, -1, 0, 0, 1, 1, -2, 2, 3, 3, 3, 3, 4};
+		int[] arr2 = {-3, -3, 1, 0, -1, 0, 0, 0, 0, 1, 1, -2, 2, 3, 3, 3, 3, 4};
+		int[] arr3 = {0, 4, -5, 2, -2, 4, 2, -1, 4};
 		int target = 0;
-		List<List<Integer>> list = fourSum(arr, 0);
+		List<List<Integer>> list = fourSum(arr3, 12);
 		System.out.println(list);
 	}
 }
