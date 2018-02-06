@@ -20,8 +20,22 @@ public class No19 {
 		if (head == null || head.next == null) {
 			return null;
 		}
+		ListNode fast = head;
+		ListNode slow = head;
+		for (int i = 0; i < n; i++) {
+			fast = fast.next;
+		}
+		if (fast == null){
+			head = head.next;
+			return head;
+		}
+		while (fast.next != null){
+			slow = slow.next;
+			fast = fast.next;
+		}
+		slow.next = slow.next.next;
 
-		return null;
+		return head;
 	}
 
 	@Test
@@ -34,6 +48,8 @@ public class No19 {
 		ListNode node2 = new ListNode(2, node3);
 		ListNode head = new ListNode(1, node2);
 		System.out.println(head);
+		ListNode listNode = removeNthFromEnd(head, 2);
+		System.out.println(listNode);
 	}
 }
 
