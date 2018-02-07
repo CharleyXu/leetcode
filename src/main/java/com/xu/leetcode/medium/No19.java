@@ -12,7 +12,7 @@ import org.junit.Test;
  *
  * After removing the second node from the end, the linked list becomes 1->2->3->5.
  *
- * faster和slower双指针
+ * fast和slow双指针
  */
 public class No19 {
 

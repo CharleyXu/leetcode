@@ -5,27 +5,25 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 
 /**
- *	处理大数相加
- * 	Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
- 	Output: 7 -> 0 -> 8
- 	Explanation: 342 + 465 = 807.
+ * 处理大数相加 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4) Output: 7 -> 0 -> 8 Explanation: 342 + 465 = 807.
  */
 public class No2 {
+
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		//进位
 		int pos = 0;
 		ListNode head = new ListNode(0);
 		ListNode temp = head;
-		while (l1!=null || l2!=null || pos !=0){
-			int sum = (l1 ==null?0:l1.val)+(l2==null?0:l2.val)+pos;
-			pos = sum/10;
-			ListNode preNode = new ListNode(sum%10);
+		while (l1 != null || l2 != null || pos != 0) {
+			int sum = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + pos;
+			pos = sum / 10;
+			ListNode preNode = new ListNode(sum % 10);
 			temp.next = preNode;
 			temp = preNode;
-			if(null!=l1){
+			if (null != l1) {
 				l1 = l1.next;
 			}
-			if(null!=l2){
+			if (null != l2) {
 				l2 = l2.next;
 			}
 		}
@@ -33,9 +31,13 @@ public class No2 {
 	}
 
 	static class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
+
+		int val;
+		ListNode next;
+
+		ListNode(int x) {
+			val = x;
+		}
 
 		@Override
 		public String toString() {
@@ -46,8 +48,8 @@ public class No2 {
 		}
 	}
 
- 	@Test
- 	public void test(){
+	@Test
+	public void test() {
 		ListNode listNode1 = new ListNode(2);
 		ListNode listNode2 = new ListNode(4);
 		ListNode listNode3 = new ListNode(3);
@@ -64,7 +66,7 @@ public class No2 {
 
 		Stopwatch started = Stopwatch.createStarted();
 		ListNode listNode = addTwoNumbers(listNode1, listNode4);
-		System.out.println(listNode+"--use--"+started.elapsed(TimeUnit.NANOSECONDS));
+		System.out.println(listNode + "--use--" + started.elapsed(TimeUnit.NANOSECONDS));
 
 	}
 }
