@@ -1,6 +1,5 @@
 package com.xu.leetcode.medium;
 
-import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 /**
@@ -56,20 +55,24 @@ public class No19 {
 
 class ListNode {
 
-	public int value;
+	public int val;
 	public ListNode next;
 
+	public ListNode(int value) {
+		this.val = value;
+	}
+
 	public ListNode(int value, ListNode next) {
-		this.value = value;
+		this.val = value;
 		this.next = next;
 	}
 
 	public int getValue() {
-		return value;
+		return val;
 	}
 
 	public ListNode setValue(int value) {
-		this.value = value;
+		this.val = value;
 		return this;
 	}
 
@@ -84,6 +87,9 @@ class ListNode {
 
 	@Override
 	public String toString() {
-		return JSON.toJSONString(this);
+		return "ListNode{" +
+				"value=" + val +
+				", next=" + next +
+				'}';
 	}
 }
