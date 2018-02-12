@@ -1,5 +1,6 @@
 package com.xu.leetcode.medium;
 
+import com.xu.leetcode.other.ListNode;
 import org.junit.Test;
 
 /**

@@ -1,5 +1,6 @@
 package com.xu.leetcode.medium;
 
+import com.xu.leetcode.other.ListNode;
 import org.junit.Test;
 
 /**
@@ -49,47 +50,5 @@ public class No19 {
 		System.out.println(head);
 		ListNode listNode = removeNthFromEnd(head, 2);
 		System.out.println(listNode);
-	}
-}
-
-
-class ListNode {
-
-	public int val;
-	public ListNode next;
-
-	public ListNode(int value) {
-		this.val = value;
-	}
-
-	public ListNode(int value, ListNode next) {
-		this.val = value;
-		this.next = next;
-	}
-
-	public int getValue() {
-		return val;
-	}
-
-	public ListNode setValue(int value) {
-		this.val = value;
-		return this;
-	}
-
-	public ListNode getNext() {
-		return next;
-	}
-
-	public ListNode setNext(ListNode next) {
-		this.next = next;
-		return this;
-	}
-
-	@Override
-	public String toString() {
-		return "ListNode{" +
-				"value=" + val +
-				", next=" + next +
-				'}';
 	}
 }

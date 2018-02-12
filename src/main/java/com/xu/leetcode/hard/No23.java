@@ -1,5 +1,6 @@
 package com.xu.leetcode.hard;
 
+import com.xu.leetcode.other.ListNode;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -70,23 +71,5 @@ public class No23 {
 		ListNode node = mergeKLists(listNodes);
 		System.out.println(node);
 
-	}
-}
-
-class ListNode {
-
-	int val;
-	ListNode next;
-
-	ListNode(int x) {
-		val = x;
-	}
-
-	@Override
-	public String toString() {
-		return "ListNode{" +
-				"val=" + val +
-				", next=" + next +
-				'}';
 	}
 }

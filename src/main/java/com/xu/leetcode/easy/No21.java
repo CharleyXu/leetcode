@@ -1,5 +1,6 @@
 package com.xu.leetcode.easy;
 
+import com.xu.leetcode.other.ListNode;
 import org.junit.Test;
 
 /**
@@ -85,23 +86,5 @@ public class No21 {
 		l2 = new ListNode(0);
 		ListNode node = mergeTwoLists(l1, l2);
 		System.out.println(node);
-	}
-}
-
-class ListNode {
-
-	int val;
-	ListNode next;
-
-	ListNode(int x) {
-		val = x;
-	}
-
-	@Override
-	public String toString() {
-		return "ListNode{" +
-				"val=" + val +
-				", next=" + next +
-				'}';
 	}
 }
