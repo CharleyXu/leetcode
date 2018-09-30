@@ -1,8 +1,6 @@
 package com.xu.leetcode.other;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import org.junit.Test;
 
@@ -20,10 +18,10 @@ public class PrintMinNumber {
 	@Test
 	public void test() {
 		int[] num = {3, 31, 321, 156};
-		PrintMinNumber(num);
+		printMinNumber(num);
 	}
 
-	public void PrintMinNumber(int[] num) {
+	public void printMinNumber(int[] num) {
 		int size = num.length;
 		List<Integer> list = new ArrayList<>(size);
 		for (int i = 0; i < size; i++) {

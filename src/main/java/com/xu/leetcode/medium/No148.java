@@ -35,7 +35,7 @@ public class No148 {
 	 */
 	public ListNode mergeSort(ListNode head) {
 		//空链表
-		if (head == null || head.next == null) {
+		if (head == null) {
 			return head;
 		}
 		ListNode slow = head;

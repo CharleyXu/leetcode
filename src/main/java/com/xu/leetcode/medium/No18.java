@@ -55,11 +55,11 @@ public class No18 {
 
 	@Test
 	public void test() {
-		int[] arr = {1, 0, -1, 0, -2, 2};
-		int[] arr2 = {-3, -3, 1, 0, -1, 0, 0, 0, 0, 1, 1, -2, 2, 3, 3, 3, 3, 4};
+//		int[] arr = {1, 0, -1, 0, -2, 2};
+//		int[] arr2 = {-3, -3, 1, 0, -1, 0, 0, 0, 0, 1, 1, -2, 2, 3, 3, 3, 3, 4};
 		int[] arr3 = {0, 4, -5, 2, -2, 4, 2, -1, 4};
-		int target = 0;
-		List<List<Integer>> list = fourSum(arr3, 12);
+		int target = 12;
+		List<List<Integer>> list = fourSum(arr3, target);
 		System.out.println(list);
 	}
 }
