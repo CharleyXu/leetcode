@@ -1,5 +1,7 @@
 package com.xu.algorithm.structure.binary;
 
+import org.junit.Test;
+
 /**
  * Created by CharleyXu on 2020-06-17
  * <p>
@@ -31,7 +33,7 @@ public class ArrangeCoins {
         long left = 0;
         long right = n;
         while (left <= right) {
-            long mid = left + (right - left) / 2;
+            long mid = (left + right) >> 1;
             if (mid * (mid + 1) / 2 <= n) {
                 left = mid + 1;
             } else {
@@ -39,6 +41,12 @@ public class ArrangeCoins {
             }
         }
         return (int) left - 1;
+    }
+
+    @Test
+    public void arrangeCoinsTest() {
+        System.out.println(arrangeCoins(8));
+        System.out.println(arrangeCoins3(8));
     }
 
 }

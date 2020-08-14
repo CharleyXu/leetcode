@@ -1,13 +1,17 @@
 package com.xu.algorithm.structure.binary;
 
+import org.junit.Test;
+
 import java.text.NumberFormat;
 
 /**
  * Created by CharleyXu on 2020-08-10
+ * <p>
+ * 求平方根，结果精确到0.01
  */
 public class Sqrts {
 
-    public static String sqrt(float x) {
+    private String sqrt(float x) {
         float left = 0, right = x, ans = -1;
         while (left <= right) {
             float mid = (left + right) / 2;
@@ -24,8 +28,9 @@ public class Sqrts {
         return numberInstance.format(ans);
     }
 
-    public static void main(String[] args) {
-        String sqrt = sqrt(21.332f);
-        System.out.println(sqrt);
+    @Test
+    public void sqrtTest() {
+        System.out.println(sqrt(21.332f));
+        System.out.println(sqrt(481.332f));
     }
 }
