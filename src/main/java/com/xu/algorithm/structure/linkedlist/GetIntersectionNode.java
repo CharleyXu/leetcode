@@ -4,6 +4,8 @@ package com.xu.algorithm.structure.linkedlist;
  * Created by CharleyXu on 2020-05-29
  * <p>
  * 链表相交
+ * <p>
+ * 找到两个单链表相交的起始节点
  */
 public class GetIntersectionNode {
 

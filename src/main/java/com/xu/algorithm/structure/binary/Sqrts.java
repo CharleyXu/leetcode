@@ -28,9 +28,26 @@ public class Sqrts {
         return numberInstance.format(ans);
     }
 
+    private int simpleSqrt(int x) {
+        int left = 0, right = x, ans = -1;
+        while (left <= right) {
+            int mid = (left + right) >> 1;
+            if (mid * mid <= x) {
+                ans = mid;
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return ans;
+    }
+
     @Test
     public void sqrtTest() {
         System.out.println(sqrt(21.332f));
         System.out.println(sqrt(481.332f));
+        System.out.println(simpleSqrt(84));
     }
+
+
 }

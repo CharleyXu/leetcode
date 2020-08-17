@@ -56,10 +56,11 @@ public class ThreeSum {
         //排序,为了使用双指针two pointers来遍历找两数之和
         Arrays.sort(nums);
         //
-        int max = Integer.MAX_VALUE;
         int result = 0;
+        int max = Integer.MAX_VALUE;
         //确定第一个数字后，就在剩下的array里找两数之和
-        for (int i = 0, size = nums.length; i < size - 2; i++) {
+        int size = nums.length;
+        for (int i = 0; i < size - 2; i++) {
             int low = i + 1;
             int high = size - 1;
             while (low < high) {

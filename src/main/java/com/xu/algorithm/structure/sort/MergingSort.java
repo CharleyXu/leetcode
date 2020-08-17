@@ -15,10 +15,18 @@ import org.junit.Test;
  * 把待排序序列分为若干个子序列，每个子序列是有序的。然后再把有序子序列合并为整体有序序列
  */
 public class MergingSort extends BaseSort {
+
     /**
-     * 自上而下的递归
      *
-     * 自下而上的迭代
+     *  平均时间复杂度	  最好情况	  最坏情况	  空间复杂度
+     *    O(nlog₂n)	  O(nlog₂n)	  O(nlog₂n)	    O(n)
+     *
+     *    假设数组长度为n，那么拆分数组共需logn，,
+     *
+     *    又每步都是一个普通的合并子数组的过程， 时间复杂度为O(n)， 故其综合时间复杂度为O(nlogn)。
+     *
+     *    另一方面， 归并排序多次递归过程中拆分的子数组需要保存在内存空间， 其空间复杂度为O(n)。
+     *
      */
 
     /**
@@ -32,7 +40,7 @@ public class MergingSort extends BaseSort {
     }
 
     /**
-     * 递归
+     * 自上而下的递归
      * <p>
      * 通过自上而下的递归实现的归并排序, 将存在堆栈溢出的风险。
      */
@@ -40,7 +48,7 @@ public class MergingSort extends BaseSort {
         if (start >= end) {
             return;
         }
-        int mid = ((end - start) >> 1) + start;
+        int mid = ((end + start) >> 1);
         int start1 = start, end1 = mid;
         int start2 = mid + 1, end2 = end;
         //拆分
@@ -72,18 +80,5 @@ public class MergingSort extends BaseSort {
         mergeSortRecursive(arr);
         printArr(arr);
     }
-
-    /**
-     *
-     *  平均时间复杂度	  最好情况	  最坏情况	  空间复杂度
-     *    O(nlog₂n)	  O(nlog₂n)	  O(nlog₂n)	    O(n)
-     *
-     *    假设数组长度为n，那么拆分数组共需logn，,
-     *
-     *    又每步都是一个普通的合并子数组的过程， 时间复杂度为O(n)， 故其综合时间复杂度为O(nlogn)。
-     *
-     *    另一方面， 归并排序多次递归过程中拆分的子数组需要保存在内存空间， 其空间复杂度为O(n)。
-     *
-     */
 
 }
