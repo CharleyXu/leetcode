@@ -26,12 +26,6 @@ public class LRUCache<K, V> {
                 return size() > MAX_CACHE_SIZE;
             }
         };
-        map = new LinkedHashMap<K, V>(capacity, loadingFactor, true) {
-            @Override
-            protected boolean removeEldestEntry(Entry<K, V> eldest) {
-                return size() > MAX_CACHE_SIZE;
-            }
-        };
     }
 
     public V get(K k) {

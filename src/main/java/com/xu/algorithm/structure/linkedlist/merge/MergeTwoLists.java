@@ -1,11 +1,13 @@
 package com.xu.algorithm.structure.linkedlist.merge;
 
+import com.xu.algorithm.structure.linkedlist.BaseLinkedList;
 import com.xu.algorithm.structure.linkedlist.ListNode;
+import org.junit.Test;
 
 /**
  * Created by CharleyXu on 2020-06-02
  */
-public class MergeTwoLists {
+public class MergeTwoLists extends BaseLinkedList {
 
     /**
      * 时间复杂度：O(n + m) ，其中 n 和 m 分别为两个链表的长度。
@@ -29,6 +31,16 @@ public class MergeTwoLists {
         }
         curr.next = l1 != null ? l1 : l2;
         return head.next;
+    }
+
+    ListNode node3 = new ListNode(62, null);
+    ListNode node2 = new ListNode(41, node3);
+    ListNode node1 = new ListNode(3, node2);
+
+    @Test
+    public void mergeTwoLists() {
+        ListNode mergeTwoLists = mergeTwoLists(head, node1);
+        System.out.println(mergeTwoLists);
     }
 
 }

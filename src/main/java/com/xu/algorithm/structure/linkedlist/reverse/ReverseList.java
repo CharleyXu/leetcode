@@ -43,10 +43,6 @@ public class ReverseList extends BaseLinkedList {
      * <p>
      * 最后返回新的头引用
      * <p>
-     * Java
-     *
-     * @param head
-     * @return
      */
     public ListNode reverse(ListNode head) {
         ListNode pre = null;

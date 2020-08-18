@@ -7,10 +7,12 @@ import java.util.Map;
  * Created by CharleyXu on 2020-08-01
  * <p>
  * hashMap + 双向链表
+ * <p>
+ * 头插法
  */
 public class MyLRUCache {
 
-    public MyLRUCache(int capacity) {
+    private MyLRUCache(int capacity) {
         this.size = 0;
         this.capacity = capacity;
         head = new LinkedNode();
@@ -54,6 +56,11 @@ public class MyLRUCache {
         }
     }
 
+    @Override
+    public String toString() {
+        return cache.toString();
+    }
+
     class LinkedNode {
         int key;
         int value;
@@ -61,6 +68,9 @@ public class MyLRUCache {
         LinkedNode next;
     }
 
+    /**
+     * 新插入的元素或者命中的元素往头部移动，尾部的元素即是最近最少使用
+     */
     private void addNode(LinkedNode node) {
         node.prev = head;
         node.next = head.next;
@@ -86,7 +96,6 @@ public class MyLRUCache {
         return res;
     }
 
-
     public static void main(String[] args) {
         MyLRUCache map = new MyLRUCache(5);
         map.put(1, 1);
@@ -94,12 +103,14 @@ public class MyLRUCache {
         map.put(3, 3);
         map.put(4, 4);
         map.put(5, 5);
-        System.out.println(map.toString());
         map.put(6, 6);
+        System.out.println(map.get(6));
+        System.out.println(map.get(1));
+        map.put(6, 10);
         map.get(2);
         map.put(7, 7);
         map.get(4);
-        System.out.println(map.toString());
+        System.out.println(map.get(6));
     }
 
 

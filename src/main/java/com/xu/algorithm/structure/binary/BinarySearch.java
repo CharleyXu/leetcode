@@ -1,4 +1,4 @@
-package com.xu.algorithm.other;
+package com.xu.algorithm.structure.binary;
 
 import org.junit.Test;
 
