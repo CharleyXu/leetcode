@@ -1,5 +1,7 @@
 package com.xu.algorithm.structure.binary;
 
+import org.junit.Test;
+
 /**
  * Created by CharleyXu on 2020-06-17
  * <p>
@@ -16,7 +18,7 @@ public class MissingNumber {
         int low = 0;
         int high = nums.length - 1;
         while (low <= high) {
-            int middle = (low + high) / 2;
+            int middle = (low + high) >> 1;
             if (middle == nums[middle]) {
                 low = middle + 1;
             } else {
@@ -25,4 +27,11 @@ public class MissingNumber {
         }
         return low;
     }
+
+    @Test
+    public void missingNumberTest() {
+        int[] nums = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 9};
+        System.out.println(missingNumber(nums));
+    }
+
 }

@@ -35,8 +35,8 @@ public class InsertionSort extends BaseSort {
     /**
      * 二分插入排序
      */
-    public void binaryInsertSort(int[] arr) {
-        if (arr == null || arr.length == 0 || arr.length == 1) {
+    private void binaryInsertSort(int[] arr) {
+        if (arr == null || arr.length <= 1) {
             return;
         }
         int length = arr.length;

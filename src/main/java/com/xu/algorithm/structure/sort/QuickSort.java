@@ -61,4 +61,49 @@ public class QuickSort extends BaseSort {
         printArr(arr);
     }
 
+    @Test
+    public void quicksSortTest() {
+        int[] arr = new int[]{24, 17, 87, 35, 19, 7, 85, 61, 47, 50};
+        quicks(arr);
+        printArr(arr);
+    }
+
+    public void quicks(int[] arr) {
+        if (arr == null || arr.length <= 1) {
+            return;
+        }
+        quicks(arr, 0, arr.length - 1);
+    }
+
+    private void quicks(int[] arr, int low, int high) {
+        if (low >= high) {
+            return;
+        }
+        int partitions = partitions(arr, low, high);
+        quicks(arr, low, partitions - 1);
+        quicks(arr, partitions + 1, high);
+    }
+
+    /**
+     * @return 轴值 位置
+     */
+    private int partitions(int[] arr, int low, int high) {
+        // 1
+        int pivot = arr[low];
+        while (low < high) {
+            // 2
+            while (low < high && arr[high] >= pivot) {
+                high--;
+            }
+            arr[low] = arr[high];
+            // 3
+            while (low < high && arr[low] <= pivot) {
+                low++;
+            }
+            arr[high] = arr[low];
+        }
+        arr[low] = pivot;
+        return low;
+    }
+
 }

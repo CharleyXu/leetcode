@@ -1,5 +1,7 @@
 package com.xu.algorithm.structure.tree;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.Map;
  * <p>
  * 寻找重复的子树
  */
-public class FindDuplicateSubtrees {
+public class FindDuplicateSubtrees extends BaseTreeNode {
 
 
     /**
@@ -25,9 +27,9 @@ public class FindDuplicateSubtrees {
 
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
         t = 1;
-        trees = new HashMap();
-        count = new HashMap();
-        ans = new ArrayList();
+        trees = new HashMap<>();
+        count = new HashMap<>();
+        ans = new ArrayList<>();
         lookup(root);
         return ans;
     }
@@ -37,9 +39,15 @@ public class FindDuplicateSubtrees {
         String serial = node.val + "," + lookup(node.left) + "," + lookup(node.right);
         int uid = trees.computeIfAbsent(serial, x -> t++);
         count.put(uid, count.getOrDefault(uid, 0) + 1);
-        if (count.get(uid) == 2)
+        if (count.get(uid) == 2) {
             ans.add(node);
+        }
         return uid;
+    }
+
+    @Test
+    public void findDuplicateSubTreeTest() {
+        System.out.println(findDuplicateSubtrees(root));
     }
 
 }

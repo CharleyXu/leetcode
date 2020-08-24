@@ -34,9 +34,8 @@ public class CountNodes extends BaseTreeNode {
     }
 
     /**
-     *
      * 完全二叉树的节点数量肯定最多2^k-1
-     *
+     * <p>
      * 完全二叉树中，除了最后一层外，其余每层节点都是满的，并且最后一层的节点全部靠向左边。
      */
     // Return tree depth in O(d) time.
@@ -112,6 +111,7 @@ public class CountNodes extends BaseTreeNode {
     @Test
     public void countNNodeBinaryTest() {
         System.out.println(countNodesBinary(root));
+        System.out.println(countNodes(root));
     }
 
 }

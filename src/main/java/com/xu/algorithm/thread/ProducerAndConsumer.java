@@ -63,7 +63,6 @@ public class ProducerAndConsumer {
                         e.printStackTrace();
                     }
                 }
-                System.out.println("wait flag 2:" + flag);
                 System.out.println("消费");
                 System.out.println("退出消费者线程");
             }

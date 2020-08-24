@@ -42,6 +42,12 @@ public class KthSmallest extends BaseTreeNode {
         return Integer.MIN_VALUE;
     }
 
+    /**
+     *           50
+     *      20        80
+     *   10    30  60   90
+     *
+     */
     @Test
     public void kthSmallestTest() {
         System.out.println(kthSmallest(root, 6));
